@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://licsber.github.io/"/>
-  <updated>2020-03-15T13:47:51.580Z</updated>
+  <updated>2020-03-17T06:37:32.908Z</updated>
   <id>https://licsber.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://licsber.github.io/2020/03/15/hello-world/"/>
-    <id>https://licsber.github.io/2020/03/15/hello-world/</id>
-    <published>2020-03-15T13:47:51.580Z</published>
-    <updated>2020-03-15T13:47:51.580Z</updated>
+    <title>服务器部署记录：可道云</title>
+    <link href="https://licsber.github.io/2020/02/15/fu-wu-qi-bu-shu-ji-lu-ke-dao-yun/"/>
+    <id>https://licsber.github.io/2020/02/15/fu-wu-qi-bu-shu-ji-lu-ke-dao-yun/</id>
+    <published>2020-02-15T03:00:00.000Z</published>
+    <updated>2020-03-17T06:37:32.908Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,333 @@
       
         
         
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+          &lt;h1 id=&quot;服务器部署记录：可道云部署&quot;&gt;&lt;a href=&quot;#服务器部署记录：可道云部署&quot; class=&quot;headerlink&quot; title=&quot;服务器部署记录：可道云部署&quot;&gt;&lt;/a&gt;服务器部署记录：可道云部署&lt;/h1&gt;&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>PAT (Advanced Level) Practice 1001-1005</title>
+    <link href="https://licsber.github.io/2020/02/09/pat-advanced-level-practice-1001-1005/"/>
+    <id>https://licsber.github.io/2020/02/09/pat-advanced-level-practice-1001-1005/</id>
+    <published>2020-02-09T05:39:00.000Z</published>
+    <updated>2020-03-17T06:37:32.908Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;PAT-Advanced-Level-Practice-1001-1005&quot;&gt;&lt;a href=&quot;#PAT-Advanced-Level-Practice-1001-1005&quot; class=&quot;headerlink&quot; title=&quot;PAT (Advanced
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>五彩斑斓的黑</title>
+    <link href="https://licsber.github.io/2020/02/05/wu-cai-ban-lan-de-hei/"/>
+    <id>https://licsber.github.io/2020/02/05/wu-cai-ban-lan-de-hei/</id>
+    <published>2020-02-05T07:21:00.000Z</published>
+    <updated>2020-03-17T06:37:32.909Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;五彩斑斓的黑&quot;&gt;&lt;a href=&quot;#五彩斑斓的黑&quot; class=&quot;headerlink&quot; title=&quot;五彩斑斓的黑&quot;&gt;&lt;/a&gt;五彩斑斓的黑&lt;/h1&gt;&lt;h2 id=&quot;项目背景&quot;&gt;&lt;a href=&quot;#项目背景&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Image Retargeting - 图像缩略图 图像重定向</title>
+    <link href="https://licsber.github.io/2020/02/04/image-retargeting-tu-xiang-suo-lue-tu-tu-xiang-chong-ding-xiang/"/>
+    <id>https://licsber.github.io/2020/02/04/image-retargeting-tu-xiang-suo-lue-tu-tu-xiang-chong-ding-xiang/</id>
+    <published>2020-02-03T23:52:00.000Z</published>
+    <updated>2020-03-17T06:37:32.908Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Image-Retargeting&quot;&gt;&lt;a href=&quot;#Image-Retargeting&quot; class=&quot;headerlink&quot; title=&quot;Image Retargeting&quot;&gt;&lt;/a&gt;Image Retargeting&lt;/h1&gt;&lt;h1
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java OJ 快速读入 竞赛用</title>
+    <link href="https://licsber.github.io/2020/01/31/java-oj-kuai-su-du-ru-jing-sai-yong/"/>
+    <id>https://licsber.github.io/2020/01/31/java-oj-kuai-su-du-ru-jing-sai-yong/</id>
+    <published>2020-01-30T21:34:00.000Z</published>
+    <updated>2020-03-17T06:37:32.908Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python 高级特性介绍 - 迭代的99种姿势 与协程</title>
+    <link href="https://licsber.github.io/2020/01/26/python-gao-ji-te-xing-jie-shao-die-dai-de-99-chong-zi-shi-yu-xie-cheng/"/>
+    <id>https://licsber.github.io/2020/01/26/python-gao-ji-te-xing-jie-shao-die-dai-de-99-chong-zi-shi-yu-xie-cheng/</id>
+    <published>2020-01-26T13:41:00.000Z</published>
+    <updated>2020-03-17T06:37:32.908Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Python-高级特性介绍-迭代的99种姿势-与协程&quot;&gt;&lt;a href=&quot;#Python-高级特性介绍-迭代的99种姿势-与协程&quot; class=&quot;headerlink&quot; title=&quot;Python 高级特性介绍 - 迭代的99种姿势
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>记MacOs视频mov与mp4格式转换问题解决</title>
+    <link href="https://licsber.github.io/2019/12/20/ji-macos-shi-pin-mov-yu-mp4-ge-shi-zhuan-huan-wen-ti-jie-jue/"/>
+    <id>https://licsber.github.io/2019/12/20/ji-macos-shi-pin-mov-yu-mp4-ge-shi-zhuan-huan-wen-ti-jie-jue/</id>
+    <published>2019-12-20T06:52:00.000Z</published>
+    <updated>2020-03-17T06:37:32.908Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;综述&quot;&gt;&lt;a href=&quot;#综述&quot; class=&quot;headerlink&quot; title=&quot;综述&quot;&gt;&lt;/a&gt;综述&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;记录了&lt;code&gt;mov&lt;/code&gt;转&lt;code&gt;mp4&lt;/code&gt;格式的方法 
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>记 2019蓝桥杯校内预选赛(JAVA组) 赛后总结</title>
+    <link href="https://licsber.github.io/2019/11/20/ji-2019-lan-qiao-bei-xiao-nei-yu-xuan-sai-java-zu-sai-hou-zong-jie/"/>
+    <id>https://licsber.github.io/2019/11/20/ji-2019-lan-qiao-bei-xiao-nei-yu-xuan-sai-java-zu-sai-hou-zong-jie/</id>
+    <published>2019-11-20T06:14:00.000Z</published>
+    <updated>2020-03-17T06:37:32.908Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;引言&quot;&gt;&lt;a href=&quot;#引言&quot; class=&quot;headerlink&quot; title=&quot;引言&quot;&gt;&lt;/a&gt;引言&lt;/h1&gt;&lt;p&gt;好像博客好久没更新了
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>记利用frp配合nginx实现内网透传</title>
+    <link href="https://licsber.github.io/2019/02/02/ji-li-yong-frp-pei-he-nginx-shi-xian-nei-wang-tou-chuan/"/>
+    <id>https://licsber.github.io/2019/02/02/ji-li-yong-frp-pei-he-nginx-shi-xian-nei-wang-tou-chuan/</id>
+    <published>2019-02-02T01:55:00.000Z</published>
+    <updated>2020-03-17T06:37:32.908Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;a href=&quot;https://github.com/fatedier/frp&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;frp下载&lt;/a&gt;  &lt;/p&gt;
+&lt;h1 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>记macbook pro装Android studio 并下载sdk</title>
+    <link href="https://licsber.github.io/2018/10/26/ji-macbook-pro-zhuang-android-studio-bing-xia-zai-sdk/"/>
+    <id>https://licsber.github.io/2018/10/26/ji-macbook-pro-zhuang-android-studio-bing-xia-zai-sdk/</id>
+    <published>2018-10-26T03:50:00.000Z</published>
+    <updated>2020-03-17T06:37:32.908Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;https://img2018.cnblogs.com/blog/1007765/201810/1007765-20181026194538502-1540448250.png&quot; alt=&quot;accept&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[科普]记远程协助女生修电脑????</title>
+    <link href="https://licsber.github.io/2018/10/23/ke-pu-ji-yuan-cheng-xie-zhu-nu-sheng-xiu-dian-nao/"/>
+    <id>https://licsber.github.io/2018/10/23/ke-pu-ji-yuan-cheng-xie-zhu-nu-sheng-xiu-dian-nao/</id>
+    <published>2018-10-23T05:56:00.000Z</published>
+    <updated>2020-03-17T06:37:32.909Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;0x00-故事背景&quot;&gt;&lt;a href=&quot;#0x00-故事背景&quot; class=&quot;headerlink&quot; title=&quot;0x00 故事背景&quot;&gt;&lt;/a&gt;0x00 故事背景&lt;/h2&gt;&lt;p&gt;某年某月某日， win10的自动更新又又又又抽风了：&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>C语言写的2048小游戏</title>
+    <link href="https://licsber.github.io/2018/10/17/c-yu-yan-xie-de-2048-xiao-you-xi/"/>
+    <id>https://licsber.github.io/2018/10/17/c-yu-yan-xie-de-2048-xiao-you-xi/</id>
+    <published>2018-10-16T18:11:00.000Z</published>
+    <updated>2020-03-17T06:37:32.908Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;基于”基于C_语言的2048算法设计_颜冠鹏.pdf”&lt;br&gt;这一篇文献提供的思路&lt;br&gt;在中国知网上能找到 就不贴具体内容了&lt;br&gt;[摘 要] 针对2048的游戏规则，分析了该游戏的算法特点，对其相关的功能需求和算法设计进行了简单介绍，提出了一种
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>记如何用树莓派3开一个无线AP</title>
+    <link href="https://licsber.github.io/2018/10/12/ji-ru-he-yong-shu-mei-pai-3-kai-yi-ge-wu-xian-ap/"/>
+    <id>https://licsber.github.io/2018/10/12/ji-ru-he-yong-shu-mei-pai-3-kai-yi-ge-wu-xian-ap/</id>
+    <published>2018-10-11T17:22:00.000Z</published>
+    <updated>2020-03-17T06:37:32.908Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;###开热点 忘掉自己手动配置吧&lt;br&gt;&lt;a href=&quot;https://github.com/oblique/create_ap&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;create_ap&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git clone
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>记Macbook Pro配合FT232使用PN532模块</title>
+    <link href="https://licsber.github.io/2018/10/11/ji-macbook-pro-pei-he-ft232-shi-yong-pn532-mo-kuai/"/>
+    <id>https://licsber.github.io/2018/10/11/ji-macbook-pro-pei-he-ft232-shi-yong-pn532-mo-kuai/</id>
+    <published>2018-10-10T17:18:00.000Z</published>
+    <updated>2020-03-17T06:37:32.908Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;####0x00实话。 被自己傻到&lt;br&gt;在linux下使用 &lt;code&gt;libusb + libnfc&lt;/code&gt; 这两个库就可以配合串口直接使用pn532模块&lt;br&gt;当时配置文件是写在 &lt;code&gt;/etc/nfc&lt;/code&gt; 目录下的&lt;br&gt;而我在OS X
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>记一次MacBook Pro无法连接wifi网络修复</title>
+    <link href="https://licsber.github.io/2018/10/06/ji-yi-ci-macbook-pro-wu-fa-lian-jie-wifi-wang-luo-xiu-fu/"/>
+    <id>https://licsber.github.io/2018/10/06/ji-yi-ci-macbook-pro-wu-fa-lian-jie-wifi-wang-luo-xiu-fu/</id>
+    <published>2018-10-05T18:20:00.000Z</published>
+    <updated>2020-03-17T06:37:32.908Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;解决方案：&lt;br&gt;&lt;a href=&quot;https://blog.csdn.net/kimbing/article/details/79321001&quot; target=&quot;_blank&quot;
         
       
     

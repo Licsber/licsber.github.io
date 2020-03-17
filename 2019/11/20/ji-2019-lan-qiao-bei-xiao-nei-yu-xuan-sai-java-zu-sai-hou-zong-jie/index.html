@@ -1,0 +1,1190 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="记 2019蓝桥杯校内预选赛(JAVA组) 赛后总结, Licsber&#39;s site">
+    <meta name="description" content="博客主要更新在博客园 这里暂时不用">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>记 2019蓝桥杯校内预选赛(JAVA组) 赛后总结 | Licsber&#39;s site</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Licsber's site" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Licsber's site</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Licsber's site</div>
+        <div class="logo-desc">
+            
+            博客主要更新在博客园 这里暂时不用
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">记 2019蓝桥杯校内预选赛(JAVA组) 赛后总结</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-11-20
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>好像博客好久没更新了 哈哈哈哈哈<br>趁现在有空更新一波<br>不知道还有没有人看<br>确实该记录一下每天做了什么了<br>不然感觉有些浑浑噩噩了  </p>
+<h1 id="比赛介绍"><a href="#比赛介绍" class="headerlink" title="比赛介绍"></a>比赛介绍</h1><p>全称: 蓝桥杯全国软件和信息技术专业人才大赛<br>蓝桥杯 实话 省赛就是花钱拿奖<br>去年啥都不懂 刚进大学还是个大一小萌新<br>C还没用熟就混了个省二回来<br>确实感受到了比赛比较水<br>不愧是暴力杯<br>不过因为学校比较low的原因<br>没有组织ACM等比赛<br>所以蓝桥是我们能参加的可以说比较高的赛事了吧<br>毕竟一流的二本 二流的一本名不虚传 hhhh<br>今年准备再打一下试试<br>看看能不能进国赛<br>说实话 大一以来做这么多硬件的东西<br>对算法这一块还真的没做多少  </p>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a>填空题</h2><h3 id="1-计算机存储中-15-125GB是多少MB"><a href="#1-计算机存储中-15-125GB是多少MB" class="headerlink" title="1. 计算机存储中 15.125GB是多少MB"></a>1. 计算机存储中 15.125GB是多少MB</h3><blockquote>
+<p>这题好像根本没挖坑<br>如果挖坑可以把大写的B(Byte字节)改成小写的b(bit比特)<br>估计跳进去的人才会有吧<br>没啥好说的  </p>
+<blockquote>
+<p>题解: 15.125 * 1024<br>打开计算器敲一下就有了</p>
+</blockquote>
+</blockquote>
+<h3 id="2-两个二进制数11110011101和1111101001的和是多少？请用二进制表示"><a href="#2-两个二进制数11110011101和1111101001的和是多少？请用二进制表示" class="headerlink" title="2. 两个二进制数11110011101和1111101001的和是多少？请用二进制表示"></a>2. 两个二进制数11110011101和1111101001的和是多少？请用二进制表示</h3><blockquote>
+<p>没啥好说的<br>打开计算器<br>点开程序员模式-二进制<br>手敲一遍即得到答案  </p>
+<blockquote>
+<p>题解: 自己算去吧</p>
+</blockquote>
+</blockquote>
+<h3 id="3-在2019个有区别的球中选3个球放在一个盘子里，请问有多少种选法？"><a href="#3-在2019个有区别的球中选3个球放在一个盘子里，请问有多少种选法？" class="headerlink" title="3. 在2019个有区别的球中选3个球放在一个盘子里，请问有多少种选法？"></a>3. 在2019个有区别的球中选3个球放在一个盘子里，请问有多少种选法？</h3><blockquote>
+<p>蓝桥杯果然是高中生刚来大学来虐大学生的<br>哈哈哈哈哈<br>组合数公式不用问了吧<br>好多你们的学长学姐都忘了  </p>
+<blockquote>
+<p>题解: C(2019, 3)</p>
+</blockquote>
+</blockquote>
+<h3 id="4-一个包含有2019个结点的无向连通图，最少包含多少条边？"><a href="#4-一个包含有2019个结点的无向连通图，最少包含多少条边？" class="headerlink" title="4. 一个包含有2019个结点的无向连通图，最少包含多少条边？"></a>4. 一个包含有2019个结点的无向连通图，最少包含多少条边？</h3><blockquote>
+<p>自己想一下<br>当然是一条链最少了<br>此时这个图退化成一个树了  </p>
+<blockquote>
+<p>题解: n - 1 = 2018  </p>
+</blockquote>
+</blockquote>
+<h2 id="程序题"><a href="#程序题" class="headerlink" title="程序题"></a>程序题</h2><h3 id="5-递增三元组"><a href="#5-递增三元组" class="headerlink" title="5. 递增三元组"></a>5. 递增三元组</h3><blockquote>
+<p>问题描述<br>  在数列 a[1], a[2], …, a[n] 中，如果对于下标 i, j, k 满足 0&lt;i&lt;j&lt;k&lt;n+1 且 a[i]&lt;a[j]&lt;a[k]，则称 a[i], a[j], a[k] 为一组递增三元组，a[j]为递增三元组的中心。<br>  给定一个数列，请问数列中有多少个元素可能是递增三元组的中心。<br>输入格式<br>  输入的第一行包含一个整数 n。<br>  第二行包含 n 个整数 a[1], a[2], …, a[n]，相邻的整数间用空格分隔，表示给定的数列。<br>输出格式<br>  输出一行包含一个整数，表示答案。<br>样例输入<br>5<br>1 2 5 3 5<br>样例输出<br>2<br>样例说明<br>  a[2] 和 a[4] 可能是三元组的中心。<br>评测用例规模与约定<br>  对于 50% 的评测用例，2 &lt;= n &lt;= 100，0 &lt;= 数列中的数 &lt;= 1000。<br>  对于所有评测用例，2 &lt;= n &lt;= 1000，0 &lt;= 数列中的数 &lt;= 10000。  </p>
+</blockquote>
+<blockquote>
+<p>很容易理解的是<br>一个数 只要左边有比它小的<br>右边有比它大的 即符合<br>所以暴力解法就是直接暴力 没啥好说的<br>dp解法: 维护两个数组<br>分别是最长上升子序列的长度<br>和最长下降子序列的长度(倒序搜索)<br>转移方程: dp[i] = max(dp[i], dp[j] + 1)</p>
+<blockquote>
+<p>题解: 代码略</p>
+</blockquote>
+</blockquote>
+<h3 id="6-逆序对"><a href="#6-逆序对" class="headerlink" title="6. 逆序对"></a>6. 逆序对</h3><blockquote>
+<p>问题描述<br>  在数列 a_1, a_2, …, a_n中，如果 a_i 和 a_j 满足 i &lt; j 且 a_i &gt; a_j，则称为一个逆序数对。<br>  给定一个数列，请问数列中总共有多少个逆序数对。<br>输入格式<br>  输入的第一行包含一个整数 n。<br>  第二行包含 n 个整数 a_1, a_2, …, a_n，相邻的整数间用空格分隔，表示给定的数列。<br>输出格式<br>  输出一行包含一个整数，表示答案。<br>样例输入<br>6<br>3 1 5 2 3 5<br>样例输出<br>4<br>评测用例规模与约定<br>  对于 50% 的评测用例，1 &lt;= n &lt;= 100，0 &lt;= 数列中的数 &lt;= 1000。<br>  对于所有评测用例，1 &lt;= n &lt;= 1000，0 &lt;= 数列中的数 &lt;= 10000。  </p>
+</blockquote>
+<blockquote>
+<p>这题比较有意思<br>据学长说是字节跳动的一面题 hhhh<br>学长说写暴力的直接滚蛋<br>一般可以想到归并排序<br>不过能想到树状数组的估计也很少了吧<br>哪天专门写一篇介绍树状数组 (二叉索引树)<br>用暴力这题绝对超时 (比如菜鸡的我)  </p>
+<blockquote>
+<p>题解: 1. 归并排序<br>边归并边统计逆序数对的数量<br>统计完整个数组也有序了 挺方便的方法<br>题解: 2. 树状数组<br>学长居然说<br>“树状数组我校估计不超过十五个人听说过”<br>“（虽然现在高中竞赛生册那已经开始学树链剖分了”<br>(贴学长原话不会被打吧 hhhh)</p>
+</blockquote>
+</blockquote>
+<h3 id="7-反倍数"><a href="#7-反倍数" class="headerlink" title="7. 反倍数"></a>7. 反倍数</h3><blockquote>
+<p>问题描述<br>  给定三个整数 a, b, c，如果一个整数既不是 a 的整数倍也不是 b 的整数倍还不是 c 的整数倍，则这个数称为反倍数。<br>  请问在 1 至 n 中有多少个反倍数。<br>输入格式<br>  输入的第一行包含一个整数 n。<br>  第二行包含三个整数 a, b, c，相邻两个数之间用一个空格分隔。<br>输出格式<br>  输出一行包含一个整数，表示答案。<br>样例输入<br>30<br>2 3 6<br>样例输出<br>10<br>样例说明<br>  以下这些数满足要求：1, 5, 7, 11, 13, 17, 19, 23, 25, 29。<br>评测用例规模与约定<br>  对于 40% 的评测用例，1 &lt;= n &lt;= 10000。<br>  对于 80% 的评测用例，1 &lt;= n &lt;= 100000。<br>  对于所有评测用例，1 &lt;= n &lt;= 1000000，1 &lt;= a &lt;= n，1 &lt;= b &lt;= n，1 &lt;= c &lt;= n。  </p>
+</blockquote>
+<blockquote>
+<p>这题没啥好说的 就是写个check函数 然后把值扔进去<br>不过我做了个超简单的dp(其实总觉得dp就是空间换时间)<br>筛了一些数 刚开始想了gcd 好像没什么特殊发现就没写上去  </p>
+<blockquote>
+<p>题解: 确定入门题还需要题解?</p>
+</blockquote>
+</blockquote>
+<h3 id="8-前序距离"><a href="#8-前序距离" class="headerlink" title="8. 前序距离"></a>8. 前序距离</h3><blockquote>
+<p>问题描述<br>  给定一个序列 a_1, a_2, …, a_n。其中 a_1 是最大的数，没有其他数与 a_1 相等。<br>  对于从第二个数开始的每个数 a_i，请找到位置在 a_i 之前且比 a_i 大的，位置上距离 a_i 最近的数 a_j。称 i-j 为 a_i 的前向距离。<br>  对于给定的序列，请求出所有数的前向距离之和。<br>输入格式<br>  输入的第一行包含一个整数 n，表示序列的长度。<br>  第二行包含 n 个正整数，为给定的序列。<br>输出格式<br>  输出一个整数，表示序列中所有数的前向距离之和。<br>样例输入<br>8<br>9 1 3 5 2 7 6 3<br>样例输出<br>14<br>样例说明<br>  序列中从第二项开始的前向距离依次为：<br>  1, 2, 3, 1, 5, 1, 1<br>  和为14。<br>数据规模和约定<br>  对于70%的评测用例，1 &lt;= n &lt;= 1000；<br>  对于所有评测用例，1 &lt;= n &lt;= 100000，a_1 &lt;= 1000000。<br>  请注意答案可能很大，可能需要使用 long long 来保存。  </p>
+</blockquote>
+<blockquote>
+<p>答案可能很大 emm 还是用了long 总觉得Java打这种一般用不上大整数类<br>除非一些题明确写了高精度计算 不过这样的题一般我也做不出来 太菜了<br>这题也需要优化 暴力肯定超时<br>学长说像“合唱队形”<br>还是需要维护一个跳转表<br>避免n!(话说阶乘复杂度的代码真的能跑完吗)的匹配情况<br>感觉这样的匹配表很像kmp 但是更像并查集<br>虽然还没手撕过并查集   </p>
+<blockquote>
+<p>题解: 1. 并查集<br>一个数组prev表示前一个比当前数大的索引<br>然后后面的数比到这个数的时候如果相等就不用一路比回去了<br>极端情况下还是会超时 比如已知升序且无重复<br>[9999999, 1, 2, …, 9999998]<br>优化一下:<br>···<br>prev[j]表示j之前离j最近比a[j]大的索引<br>那么a[j]肯定比从prev[j] + 1 到j - 1都大<br>所以当a[i] &gt; a[j]时 [j, i - 1]范围内的元素都比a[i]小<br>[prev[j], j - 1]范围内的元素都比a[j]小<br>所以也一定比a[i]小<br>所以从prev[j]到j - 1可以直接跳<br>j直接跳到prev[j]即可接着查<br>···  </p>
+</blockquote>
+</blockquote>
+<h3 id="9-V型坐标"><a href="#9-V型坐标" class="headerlink" title="9. V型坐标"></a>9. V型坐标</h3><blockquote>
+<p>问题描述<br>  当夜深人静时，小明喜欢独自凝望着天空。<br>  这一天，小明看着满天的繁星，突发奇思妙想，他发现可以通过用直线连接天空中的星星来组成美丽的图案。<br>  小明想到一个非常简单的图案：大写的V，如果连接三颗星星，中间一颗最靠下方，这样的形状就是一个大V了。<br>  小明越想越着迷，他想知道，天空中最亮的 n 颗星星，可以有多少种方式组成大V。<br>  为了更严谨的看待问题，小明把自己所见范围的天空映射到了一个平面直角坐标系中，他看到的最亮的 n 颗星星在这个坐标系中都有自己的坐标。<br>  如果三颗星星的坐标分别为 (x_i, y_i), (x_j, y_j), (x_k, y_k)，当 x_i &lt; x_j &lt; x_k 且 y_j &lt; y_i 且 y_j &lt; y_k 时，这三颗星星就组成了一个大 V。<br>输入格式<br>  输入的第一行包含一个整数 n 。<br>  接下来 n 行，每行两个整数，每一行表示一颗星星的 x 坐标和 y 坐标。<br>输出格式<br>  输出一行包含一个整数，表示有多少种方式组成大V。<br>样例输入<br>5<br>4 5<br>2 3<br>1 4<br>3 3<br>5 8<br>样例输出<br>4<br>评测用例规模与约定<br>  对于 30% 的评测用例，2 &lt;= n &lt;= 50，星星的坐标为不超过 1000 的非负整数。<br>  对于 50% 的评测用例，2 &lt;= n &lt;= 100，星星的坐标为不超过 1000 的非负整数。<br>  对于 80% 的评测用例，2 &lt;= n &lt;= 1000，星星的坐标为不超过 10000 的非负整数。<br>  对于所有评测用例，2 &lt;= n &lt;= 5000，星星的坐标为不超过 100000 的非负整数。  </p>
+</blockquote>
+<blockquote>
+<p>小明脑子不太对系列<br>可以去知乎回答问题了<br>这题没啥好讲的<br>写个check函数 然后就了事了<br>一开始忘了排序 傻傻的连样例都没过 还愣了我半分钟<br>这题排序是对x排序 顺带改变y 别排错了<br>不过还是要注意时间<br>感觉和第五题差不多 也是<br>维护两个数组<br>分别是最长上升子序列的长度<br>和最长下降子序列的长度(倒序搜索)  </p>
+<blockquote>
+<p>题解: 略 和第五题一样</p>
+</blockquote>
+</blockquote>
+<h3 id="10-选节目"><a href="#10-选节目" class="headerlink" title="10. 选节目"></a>10. 选节目</h3><blockquote>
+<p>问题描述<br>  小明要组织一台晚会，总共准备了 n 个节目。然后晚会的时间有限，他只能最终选择其中的 m 个节目。<br>  这 n 个节目是按照小明设想的顺序给定的，顺序不能改变。<br>  小明发现，观众对于晚上的喜欢程度与前几个节目的好看程度有非常大的关系，他希望选出的第一个节目尽可能好看，在此前提下希望第二个节目尽可能好看，依次类推。<br>  小明给每个节目定义了一个好看值，请你帮助小明选择出 m 个节目，满足他的要求。<br>输入格式<br>  输入的第一行包含两个整数 n, m ，表示节目的数量和要选择的数量。<br>  第二行包含 n 个整数，依次为每个节目的好看值。<br>输出格式<br>  输出一行包含 m 个整数，为选出的节目的好看值。<br>样例输入<br>5 3<br>3 1 2 5 4<br>样例输出<br>3 5 4<br>样例说明<br>  选择了第1, 4, 5个节目。<br>评测用例规模与约定<br>  对于 30% 的评测用例，1 &lt;= n &lt;= 20；<br>  对于 60% 的评测用例，1 &lt;= n &lt;= 100；<br>  对于所有评测用例，1 &lt;= n &lt;= 100000，0 &lt;= 节目的好看值 &lt;= 100000。  </p>
+</blockquote>
+<blockquote>
+<p>这题. 不知道是出题人的问题还是我的问题<br>没看懂想要干什么<br>于是乎直接写了排序之后输出最大的m个(按原来次序)<br>出来问了学长 学长跟我写的一样 .. 看来都没看懂出题人想干啥  </p>
+<blockquote>
+<p>题解: 就排个序 没了 注意边界处理  </p>
+</blockquote>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>因为校赛什么都不计入 加上还有点事情要处理<br>所以看了看题 写了点东西 明白自己还有哪点不会就溜了<br>去年模拟我好像是全校倒数第一吧 hhhh 菜的真实<br>这次发现平时看一些题还是有用的<br>比如树状数组 虽然该用上的时候自己一时半会也撕不出来 (<br>归并排序 并查集 各种dp<br>总之 加油!</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://licsber.github.io" rel="external nofollow noreferrer">Licsber</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://licsber.github.io/2019/11/20/ji-2019-lan-qiao-bei-xiao-nei-yu-xuan-sai-java-zu-sai-hou-zong-jie/">https://licsber.github.io/2019/11/20/ji-2019-lan-qiao-bei-xiao-nei-yu-xuan-sai-java-zu-sai-hou-zong-jie/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://licsber.github.io" target="_blank">Licsber</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/12/20/ji-macos-shi-pin-mov-yu-mp4-ge-shi-zhuan-huan-wen-ti-jie-jue/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="记MacOs视频mov与mp4格式转换问题解决">
+                        
+                        <span class="card-title">记MacOs视频mov与mp4格式转换问题解决</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            综述
+记录了mov转mp4格式的方法  
+记录了自己是多蠢
+
+问题背景这学期选修的《工程英语视听说》课，需要提交一段口语考试视频，于是乎：带着我的大疆Mavic Mini 和iPad Pro出去，一顿操作之后，有了视频和录音文件回到实验室用
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Licsber
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/02/02/ji-li-yong-frp-pei-he-nginx-shi-xian-nei-wang-tou-chuan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="记利用frp配合nginx实现内网透传">
+                        
+                        <span class="card-title">记利用frp配合nginx实现内网透传</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            frp下载  
+背景 :内网有一台服务器A 在NAT背后  
+无法被其他客户端访问  
+借助公网服务器B来配置内网透传  
+即可通过B来访问A  
+服务端安装frps 启动: ./frps -c frps.ini配置文件frps.ini如下
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-02-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Licsber
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="https://licsber.github.io" target="_blank">Licsber</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/licsber" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:licsber@njit.edu.cn" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=460874737" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 460874737" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,1407 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Python 高级特性介绍 - 迭代的99种姿势 与协程, Licsber&#39;s site">
+    <meta name="description" content="博客主要更新在博客园 这里暂时不用">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Python 高级特性介绍 - 迭代的99种姿势 与协程 | Licsber&#39;s site</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Licsber's site" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Licsber's site</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Licsber's site</div>
+        <div class="logo-desc">
+            
+            博客主要更新在博客园 这里暂时不用
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Python 高级特性介绍 - 迭代的99种姿势 与协程</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-01-26
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Python-高级特性介绍-迭代的99种姿势-与协程"><a href="#Python-高级特性介绍-迭代的99种姿势-与协程" class="headerlink" title="Python 高级特性介绍 - 迭代的99种姿势 与协程"></a>Python 高级特性介绍 - 迭代的99种姿势 与协程</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p><img src="https://img2018.cnblogs.com/blog/1007765/202001/1007765-20200127060727218-1029141039.png" alt=""></p>
+<blockquote>
+<p>写这个笔记记录一下一点点收获<br>测试环境版本：  </p>
+<ol>
+<li>Python 3.7.4 (default, Sep 28 2019, 16:39:19)<br>Python2老早就停止支持了 所以还是跟进py3吧 </li>
+<li>macOS Catalina 10.15.1</li>
+</ol>
+</blockquote>
+<h2 id="迭代方式"><a href="#迭代方式" class="headerlink" title="迭代方式"></a>迭代方式</h2><blockquote>
+<p>Python中一样可以使用for进行迭代<br>与C、Java等一众语言有区别的是<br>python中迭代更像是Java的<code>逐元循环（foreach）</code>  </p>
+</blockquote>
+<h3 id="Java用法（下标迭代）："><a href="#Java用法（下标迭代）：" class="headerlink" title="Java用法（下标迭代）："></a>Java用法（下标迭代）：</h3><pre><code>for (int i = 0; i &lt; array.length; ++i) {
+    operation(array[i]);
+}</code></pre><blockquote>
+<p>可以看到 对于存在下标的Java数组而言<br>利用数组下标进行遍历更加符合直觉（数组就是一块<code>连续的内存空间</code> 加上 <code>下标</code>作为偏移量）<br>Java内部实现：数组变量int[] array作为数据存储在Java的<code>栈</code>里<br>而数组本身在<code>堆</code>中创建 其<code>引用</code>被赋值给array  </p>
+</blockquote>
+<h3 id="等价的python代码："><a href="#等价的python代码：" class="headerlink" title="等价的python代码："></a>等价的python代码：</h3><pre><code>for i in range(len(list)):
+    operation(list[i])</code></pre><blockquote>
+<p>问题来了 如果也想使用相似的下标方式该怎么办呢<br>python自带了<code>enumerate</code>函数可以帮助我们实现：  </p>
+</blockquote>
+<h3 id="等价的python代码：-1"><a href="#等价的python代码：-1" class="headerlink" title="等价的python代码："></a>等价的python代码：</h3><pre><code>for i, value in enumerate(list):
+    operation(value)</code></pre><blockquote>
+<p>其实python自带的<code>dict</code>本身实现了这个操作：</p>
+</blockquote>
+<h3 id="python同时对key和value进行迭代"><a href="#python同时对key和value进行迭代" class="headerlink" title="python同时对key和value进行迭代"></a>python同时对key和value进行迭代</h3><pre><code>for key, value in dict.items():
+    operation(key, value)</code></pre><blockquote>
+<p>下面就是抽象程度更高的循环了：<br>其不光可以用在带<code>下标</code>的数据类型上<br>对于<code>可迭代（Iterable）</code>的所有元素都可以这样操作  </p>
+</blockquote>
+<h3 id="Java用法（逐元循环）："><a href="#Java用法（逐元循环）：" class="headerlink" title="Java用法（逐元循环）："></a>Java用法（逐元循环）：</h3><pre><code>int[] array = new int[len];
+for(int i : array) {
+    // 注意这里是深拷贝 
+    // 如果对i做赋值等操作无意义
+    operation(i);
+}</code></pre><h3 id="等价的python用法："><a href="#等价的python用法：" class="headerlink" title="等价的python用法："></a>等价的python用法：</h3><pre><code>for i in list:
+    operation(i)</code></pre><h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><blockquote>
+<p>在python中 有时候会遇到创建容量很大的list的需求<br>假如list中每个元素都可以利用算法推出来  如：  </p>
+</blockquote>
+<pre><code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</code></pre><blockquote>
+<p>就可以利用<code>列表生成式（List Comprehensions）</code>来实现：  </p>
+</blockquote>
+<pre><code>a = [x for x in range(10)]</code></pre><blockquote>
+<p>假如想生成<code>1e10</code>个元素呢？<br>一方面会遇到内存容量不足的情况<br>还有如果我们访问过前几个元素便不需要这个list了<br>就会造成极大的内存浪费  </p>
+</blockquote>
+<blockquote>
+<p>这里从案例引入<code>生成器</code>的概念<br>有时候小白在学习python<br>很容易把列表的创建符号打错<br>如下  </p>
+</blockquote>
+<pre><code>a = {1, 2, 1}</code></pre><blockquote>
+<p>学过c和Java的程序员以为这样会创建一个数组<br>但是在python里这是一个set（集合）<br>其特点是无序且不重复<br>于是上面的等价代码如下：  </p>
+</blockquote>
+<pre><code>a = {1, 2}</code></pre><blockquote>
+<p>和直觉（Java程序员的）相违背</p>
+</blockquote>
+<blockquote>
+<p>还有同学写成了这样的形式：</p>
+</blockquote>
+<pre><code>a = (1, 2)</code></pre><blockquote>
+<p>这样就创建了一个tuple（元组）<br>其特点是元素不可修改  </p>
+</blockquote>
+<blockquote>
+<p>最后一种小白写成了这样：  </p>
+</blockquote>
+<pre><code>a = (x for x in range(10))</code></pre><blockquote>
+<p>乍一看和上面列表生成式很像<br>用它迭代试试呢：  </p>
+</blockquote>
+<pre><code>for i in range(len(a)):
+    print(i)</code></pre><blockquote>
+<p>Traceback (most recent call last):<br>  File “<stdin>“, line 1, in <module><br>TypeError: object of type ‘generator’ has no len()  </module></stdin></p>
+</blockquote>
+<blockquote>
+<p>嗯哼？出现了意料之外的结果<br>所以我们到底创建了一个什么呢？<br>用<code>type()</code>看一看：  </p>
+</blockquote>
+<blockquote>
+<p>&lt;class ‘generator’&gt;</p>
+</blockquote>
+<blockquote>
+<p>哦豁 这是个啥 <code>generator(生成器)</code>？<br>查一下资料 好像这个就是我们需要的<br>这个东西就可以解决上面提到的问题<br>不必占用大量内存 还可以满足迭代需求  </p>
+</blockquote>
+<h3 id="对生成器的迭代方式："><a href="#对生成器的迭代方式：" class="headerlink" title="对生成器的迭代方式："></a>对生成器的迭代方式：</h3><pre><code>next(generator)</code></pre><blockquote>
+<p>如果迭代完成 会获得<code>StopIteration</code>的异常<br>当然这样很不优雅<br>要知道生成器也是<code>可迭代(Iterable)</code>的：</p>
+</blockquote>
+<pre><code>for i in generator:
+    operation(i)</code></pre><blockquote>
+<p>这样就可以愉快的迭代了  </p>
+</blockquote>
+<blockquote>
+<p>等会 如果想生成一个无法用列表生成式表达的list呢？<br>比如 斐波那契数列<br>这样很容易利用函数写出 却无法使用一层for直接给出的  </p>
+</blockquote>
+<pre><code>def fib(max):
+    n, a, b = 0, 0, 1
+    while n &lt; max:
+        print(b)
+        a, b = b, a + b
+        n = n + 1
+    return 'done'</code></pre><blockquote>
+<p>这个函数可以输出fib的前n个数<br>那么怎么得到这样的生成器呢？<br>很简单 只需要把输出语句改为yield即可：  </p>
+</blockquote>
+<pre><code>def fib(max):
+    n, a, b = 0, 0, 1
+    while n &lt; max:
+        yield b
+        a, b = b, a + b
+        n = n + 1
+    return 'done'</code></pre><blockquote>
+<p>yield在其中的作用相当于return<br>其英文意思本身就是<code>产出</code>嘛<br>但是是在每次调用next时return<br>下一次从yield处重新开始计算<br>这样就可以方便的迭代斐波那契数列了：</p>
+</blockquote>
+<pre><code>for i in fib(100):
+    print(i)</code></pre><h2 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h2><blockquote>
+<p>迭代器(Iterator)和可迭代(Iterable)<br>python内置的集合数据类型都是可迭代的<br>如<code>list</code>、<code>tuple</code>、<code>set</code>、<code>dict</code>、<code>str</code>等<br><code>生成器</code>也是<code>可迭代</code>的<br>总而言之 可以作用于for循环的对象都是可迭代的  </p>
+</blockquote>
+<blockquote>
+<p>但是迭代器是另一个概念<br>代表可以被next()函数调用的对象<br>其一定是惰性计算的<br>集合数据类型如<code>list</code>、<code>dict</code>、<code>str</code>等是可迭代但不是迭代器<br>不过可以通过iter()函数获得一个迭代器对象<br>迭代器通常表示一个数据流 并且可以是无限大的  </p>
+</blockquote>
+<blockquote>
+<p>在Java中 对<code>集合（Collections）</code>的遍历操作可以通过迭代器进行<br>迭代器的基本方法有<code>hasNext()</code>、<code>next()</code>、<code>remove()</code><br>它支持以不同的方式遍历一个聚合对象<br>同时还有<code>ListIterator</code>扩展<code>Iterator接口</code>来实现列表的双向遍历和元素的修改<br>这一点也和设计模式中迭代器模式很相似  </p>
+</blockquote>
+<p>其优点有：</p>
+<ol>
+<li>访问一个聚合对象的内容而无须暴露它的内部表示</li>
+<li>需要为聚合对象提供多种遍历方式</li>
+<li>为遍历不同的聚合结构提供一个统一的接口  </li>
+</ol>
+<blockquote>
+<p>其实Java的编译器会自动把标准的foreach循环自动转换为Iterator遍历<br>因为Iterator对象是集合对象自己在内部创建的<br>它自己知道如何<code>高效遍历内部</code>的数据集合  </p>
+</blockquote>
+<h2 id="python的协程"><a href="#python的协程" class="headerlink" title="python的协程"></a>python的协程</h2><blockquote>
+<p>你以为这篇笔记到此为止了吗？<br>天真 其实才<code>刚刚开始</code><br>这篇写作的动机在于  </p>
+</blockquote>
+<h2 id="go的协程和python的协程"><a href="#go的协程和python的协程" class="headerlink" title="go的协程和python的协程"></a><code>go的协程和python的协程</code></h2><p>首先复习一下  </p>
+<blockquote>
+<p>进程、线程和协程的基本概念<br>进程：操作系统<code>资源分配</code>的最小单位<br>线程：操作系统<code>资源调度</code>的最小单位<br>协程：<code>语言层面</code>实现的对线程的调度  </p>
+</blockquote>
+<blockquote>
+<p>程序：指令、数据及其组织形式的描述<br>进程：程序的实体<br>多线程：在单个程序中同时运行多个线程完成不同的工作  </p>
+</blockquote>
+<p>go的<code>设计哲学</code>最重要的就有一个：  </p>
+<blockquote>
+<p>不要使用共享内存来通信 要使用通信来共享内存  </p>
+</blockquote>
+<blockquote>
+<p>现在都讲究高并发<br>挺重要的一点就是异步操作<br>比如io操作通常需要是异步的<br>这一点在前端的一些语言中体现的比较多<br>比如<code>setTimeout()</code><br>比如微信小程序开发中<br>会用到<code>promise回调</code><br>微信中常见的用到异步回调接口  </p>
+</blockquote>
+<pre><code>wx.function({
+  success: () =&gt; console.log('success'),
+  fail: () =&gt; console.log('failure'),
+})</code></pre><blockquote>
+<p>这样很不优雅<br>因为一旦逻辑多了 小白很容易写成回调地狱形式<br>解决方案是可以封装成promise回调<br>这里直接贴一道面试题吧<br>调用<code>async</code>修饰的方法会直接返回一个<code>Promise</code>对象  </p>
+</blockquote>
+<pre><code>async function async1(){
+    console.log('async1 start')
+    await async2()
+    console.log('async1 end')
+}
+async function async2(){
+    console.log('async2')
+}
+console.log('script start')
+setTimeout(function(){
+    console.log('setTimeout')
+},0)  
+async1();
+new Promise(function(resolve){
+    console.log('promise1')
+    resolve();
+}).then(function(){
+    console.log('promise2')
+})
+console.log('script end')</code></pre><blockquote>
+<p>实测的输出：</p>
+</blockquote>
+<pre><code>[Log] script start
+[Log] async1 start
+[Log] async2
+[Log] promise1
+[Log] script end
+[Log] promise2
+[Log] async1 end
+&lt; undefined
+[Log] setTimeout</code></pre><blockquote>
+<p>如果更追求优雅的话 封成proxy都可以<br>这里略过不表  </p>
+</blockquote>
+<blockquote>
+<p>python就借鉴了前端<code>async</code>和<code>await</code>的模式<br>（其实这才是<code>异步的终极解决方案</code>么<br>内置实现是<code>asyncio</code>库  </p>
+</blockquote>
+<blockquote>
+<p>import一下 看看内部有什么实现<br>dir(asyncio)<br>[‘ALL_COMPLETED’, ‘AbstractChildWatcher’, ‘AbstractEventLoop’, ‘AbstractEventLoopPolicy’, ‘AbstractServer’, ‘BaseEventLoop’, ‘BaseProtocol’, ‘BaseTransport’, ‘BoundedSemaphore’, ‘BufferedProtocol’, ‘CancelledError’, ‘Condition’, ‘DatagramProtocol’, ‘DatagramTransport’, ‘DefaultEventLoopPolicy’, ‘Event’, ‘FIRST_COMPLETED’, ‘FIRST_EXCEPTION’, ‘FastChildWatcher’, ‘Future’, ‘Handle’, ‘IncompleteReadError’, ‘InvalidStateError’, ‘LifoQueue’, ‘LimitOverrunError’, ‘Lock’, ‘PriorityQueue’, ‘Protocol’, ‘Queue’, ‘QueueEmpty’, ‘QueueFull’, ‘ReadTransport’, ‘SafeChildWatcher’, ‘SelectorEventLoop’, ‘Semaphore’, ‘SendfileNotAvailableError’, ‘StreamReader’, ‘StreamReaderProtocol’, ‘StreamWriter’, ‘SubprocessProtocol’, ‘SubprocessTransport’, ‘Task’, ‘TimeoutError’, ‘TimerHandle’, ‘Transport’, ‘WriteTransport’, ‘<strong>all</strong>‘, ‘<strong>builtins</strong>‘, ‘<strong>cached</strong>‘, ‘<strong>doc</strong>‘, ‘<strong>file</strong>‘, ‘<strong>loader</strong>‘, ‘<strong>name</strong>‘, ‘<strong>package</strong>‘, ‘<strong>path</strong>‘, ‘<strong>spec</strong>‘, ‘_all_tasks_compat’, ‘_enter_task’, ‘_get_running_loop’, ‘_leave_task’, ‘_register_task’, ‘_set_running_loop’, ‘_unregister_task’, ‘all_tasks’, ‘as_completed’, ‘base_events’, ‘base_futures’, ‘base_subprocess’, ‘base_tasks’, ‘constants’, ‘coroutine’, ‘coroutines’, ‘create_subprocess_exec’, ‘create_subprocess_shell’, ‘create_task’, ‘current_task’, ‘ensure_future’, ‘events’, ‘format_helpers’, ‘futures’, ‘gather’, ‘get_child_watcher’, ‘get_event_loop’, ‘get_event_loop_policy’, ‘get_running_loop’, ‘iscoroutine’, ‘iscoroutinefunction’, ‘isfuture’, ‘locks’, ‘log’, ‘new_event_loop’, ‘open_connection’, ‘open_unix_connection’, ‘protocols’, ‘queues’, ‘run’, ‘run_coroutine_threadsafe’, ‘runners’, ‘selector_events’, ‘set_child_watcher’, ‘set_event_loop’, ‘set_event_loop_policy’, ‘shield’, ‘sleep’, ‘sslproto’, ‘start_server’, ‘start_unix_server’, ‘streams’, ‘subprocess’, ‘sys’, ‘tasks’, ‘transports’, ‘unix_events’, ‘wait’, ‘wait_for’, ‘wrap_future’]</p>
+</blockquote>
+<blockquote>
+<p>可以看到 内部方法还是挺多的  </p>
+</blockquote>
+<p>介绍如下：<br>asyncio 提供一组<code>高层级</code>API 用于:  </p>
+<ol>
+<li><code>并发</code>地运行Python 协程并对其执行过程实现完全控制  </li>
+<li>执行<code>网络IO</code>和<code>IPC</code>  </li>
+<li>控制<code>子进程</code>  </li>
+<li>通过<code>队列</code>实现<code>分布式</code>任务  </li>
+<li><code>同步</code>并发代码  </li>
+</ol>
+<blockquote>
+<p>在这个库出现之前怎么写异步呢？<br>前面介绍了<code>生成器</code>和<code>yield</code><br>但是少介绍了一个函数<br>和<code>next()</code>配套使用的<code>send()</code><br><code>next()</code>完全等价于<code>send(None)</code><br><code>子程序</code>就是<code>协程</code>的一种特例</p>
+</blockquote>
+<blockquote>
+<p>这里引用廖雪峰的一个生产者消费者模型：</p>
+</blockquote>
+<pre><code>def consumer():
+    r = ''
+    while True:
+        n = yield r
+        if not n:
+            return
+        print('[CONSUMER] Consuming %s...' % n)
+        r = '200 OK'
+
+def produce(c):
+    c.send(None)
+    n = 0
+    while n &lt; 5:
+        n = n + 1
+        print('[PRODUCER] Producing %s...' % n)
+        r = c.send(n)
+        print('[PRODUCER] Consumer return: %s' % r)
+    c.close()
+
+c = consumer()
+produce(c)</code></pre><blockquote>
+<p>可以看到整个流程<code>无锁</code><br>由一个<code>线程</code>执行<br>produce和consumer<code>协作</code>完成任务<br>所以称为<code>“协程”</code><br>而非线程的抢占式多任务  </p>
+</blockquote>
+<blockquote>
+<p>这样写很不优雅<br>但是在asyncio出现之前的协程只有这一种写法<br>出现之后：</p>
+</blockquote>
+<pre><code>import asyncio
+
+@asyncio.coroutine
+def hello():
+    print("Hello world!")
+    # 异步调用asyncio.sleep(1):
+    r = yield from asyncio.sleep(1)
+    print("Hello again!")
+
+# 获取EventLoop:
+loop = asyncio.get_event_loop()
+# 执行coroutine
+loop.run_until_complete(hello())
+loop.close()</code></pre><blockquote>
+<p>熟悉前端编程的同学应该看出来了<br><code>@asyncio.coroutine</code>这不就是<code>async</code><br><code>yield from</code>这不就是<code>await</code>么  </p>
+</blockquote>
+<blockquote>
+<p>有个小坑就是<br>原生的生成器不能直接用于await操作<br>需要用async修饰之后<br>生成器变成了异步生成器<br>这样就可以作用于await操作了  </p>
+</blockquote>
+<blockquote>
+<p>这一点go和erlang等语言做的就很好<br>python因为是后来才支持的协程<br>所以如果一个方法是async的<br>连带着调用的所有方法都需要是async的  </p>
+</blockquote>
+<blockquote>
+<p>python内部实现是<code>eventloop模型</code><br>go和erlang的实现是<code>CSP(Communicating Sequential Processes)</code><br>这里略过不表  </p>
+</blockquote>
+<pre><code>import asyncio
+
+
+# @asyncio.coroutine
+async def hello():
+    print('hello')
+    # r = yield from asyncio.sleep(5)
+    r = await asyncio.sleep(5)
+    print('hello again '.format(r))
+
+
+# @asyncio.coroutine
+async def wget(host):
+    print('wget host:{}'.format(host))
+    conn = asyncio.open_connection(host, 80)
+    # reader, writer = yield from conn
+    reader, writer = await conn
+    header = 'GET / HTTP/1.0\r\nHost: {}\r\n\r\n'.format(host)
+    writer.write(header.encode('utf-8'))
+    # yield from writer.drain()
+    await writer.drain()
+    while True:
+        # line = yield from reader.readline()
+        line = await reader.readline()
+        if line == b'\r\n':
+            break
+        print('{} header: {}'.format(host, line.decode('utf-8').rstrip()))
+    writer.close()
+
+
+if __name__ == '__main__':
+    loop = asyncio.get_event_loop()
+    tasks = [wget(host) for host in ['www.sina.com.cn', 'www.sohu.com', 'www.163.com']]
+    loop.run_until_complete(asyncio.wait(tasks))
+    loop.close()</code></pre><blockquote>
+<p>这一点在后端编程上用的比较多<br>补充知识点就是各种io模型<br>比如BIO、NIO、AIO等<br>一般Java面试会碰到吧  </p>
+</blockquote>
+<blockquote>
+<p>而go的协程作为其最大的特性之一<br>一开始就占据了先机<br>内部实现是用的<code>goroutine</code>和<code>channel</code><br>通信机制非常简单<br>传数据用<code>channel &lt;- data</code><br>取数据用<code>&lt;-channel</code>  </p>
+</blockquote>
+<blockquote>
+<p>go的<code>MPG</code>模型：<br><code>M</code>即<code>Machine</code> 一个<code>M</code>直接关联一个<code>内核线程</code><br><code>P</code>即<code>Processor</code> 代表<code>M</code>需要的<code>上下文</code>环境 也是处理<code>用户级代码逻辑</code>的处理器<br><code>G</code>即<code>Goroutine</code> 本质上也是一种轻量级的<code>线程</code></p>
+</blockquote>
+<blockquote>
+<p>go采用的这种模型 从语言层面支持了并发<br>其实现挺像Java的线程池的 但是轻轻松松创建百万个goroutine<br>Java线程创几万个就会占用很高的内存了（大概1个1MB左右）  </p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>廖雪峰的python教程<br>谷歌来的各种资料<br>后面应该会再写一个关于装饰器的文章吧<br>大概（咕咕咕</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://licsber.github.io" rel="external nofollow noreferrer">Licsber</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://licsber.github.io/2020/01/26/python-gao-ji-te-xing-jie-shao-die-dai-de-99-chong-zi-shi-yu-xie-cheng/">https://licsber.github.io/2020/01/26/python-gao-ji-te-xing-jie-shao-die-dai-de-99-chong-zi-shi-yu-xie-cheng/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://licsber.github.io" target="_blank">Licsber</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/01/31/java-oj-kuai-su-du-ru-jing-sai-yong/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Java OJ 快速读入 竞赛用">
+                        
+                        <span class="card-title">Java OJ 快速读入 竞赛用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            背景Java打比赛太吃亏了吧人家C艹有超快的getchar()最不济cin的效率也比Java带的Scanner高还有内存占用方面竞赛中都不计算Java的内存占用因为占用太多了（  在空间上卡Java一卡一个准  
+结论
+利用读入二维数组进行
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-01-31
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Licsber
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/12/20/ji-macos-shi-pin-mov-yu-mp4-ge-shi-zhuan-huan-wen-ti-jie-jue/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="记MacOs视频mov与mp4格式转换问题解决">
+                        
+                        <span class="card-title">记MacOs视频mov与mp4格式转换问题解决</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            综述
+记录了mov转mp4格式的方法  
+记录了自己是多蠢
+
+问题背景这学期选修的《工程英语视听说》课，需要提交一段口语考试视频，于是乎：带着我的大疆Mavic Mini 和iPad Pro出去，一顿操作之后，有了视频和录音文件回到实验室用
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Licsber
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="https://licsber.github.io" target="_blank">Licsber</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/licsber" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:licsber@njit.edu.cn" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=460874737" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 460874737" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
